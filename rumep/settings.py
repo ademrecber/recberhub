@@ -16,7 +16,7 @@ SECRET_KEY = os.getenv('DJANGO_SECRET_KEY', 'fallback-secret-key')
 DEBUG = False
 
  # Test için, sonra ['rumep-test.onrender.com'] yap
-ALLOWED_HOSTS = ['rumep-test.onrender.com']
+ALLOWED_HOSTS = ['*']
 
      # Application definition
 
@@ -50,7 +50,7 @@ ROOT_URLCONF = 'rumep.urls'
 TEMPLATES = [
          {
              'BACKEND': 'django.template.backends.django.DjangoTemplates',
-             
+
              'DIRS': [],
              'APP_DIRS': True,
              'OPTIONS': {
@@ -108,7 +108,8 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [BASE_DIR / "main/static"]
 STATIC_ROOT = BASE_DIR / "staticfiles"
-
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+WHITENOISE_MANIFEST_STRICT = False
      # Default primary key field type
      # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
