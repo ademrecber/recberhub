@@ -41,13 +41,16 @@ MIDDLEWARE = [
          'django.contrib.messages.middleware.MessageMiddleware',
          'django.middleware.clickjacking.XFrameOptionsMiddleware',
          'main.middleware.SocialAuthExceptionMiddleware',
-     ]
+         'whitenoise.middleware.WhiteNoiseMiddleware',
+         'django.contrib.staticfiles.middleware.StaticFilesMiddleware'
+]
 
 ROOT_URLCONF = 'rumep.urls'
 
 TEMPLATES = [
          {
              'BACKEND': 'django.template.backends.django.DjangoTemplates',
+             
              'DIRS': [],
              'APP_DIRS': True,
              'OPTIONS': {
