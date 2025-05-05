@@ -1,0 +1,44 @@
+/* Profil sayfası için özel stiller */
+@media (max-width: 767.98px) {
+    .container.twitter-container ul.nav.nav-tabs.scrollable-tabs {
+        display: flex !important;
+        flex-wrap: nowrap !important; /* Bootstrap’in flex-wrap’ini geçersiz kıl */
+        overflow-x: auto !important;
+        overflow-y: hidden !important;
+        white-space: nowrap !important;
+        -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important; /* Firefox */
+        max-width: 100% !important; /* .twitter-container’ın max-width’ini geçersiz kıl */
+        width: 100% !important; /* Tam genişlik */
+        padding: 0 !important; /* .twitter-container’ın padding’ini kaldır */
+        margin: 0 !important; /* Ekstra margin’leri kaldır */
+        box-sizing: border-box !important; /* Doğru boyutlandırma */
+        background-color: transparent !important; /* Arka plan sorunlarını önle */
+        overscroll-behavior-x: contain !important; /* Gereksiz kaydırmayı önle */
+    }
+    .container.twitter-container ul.nav.nav-tabs.scrollable-tabs::-webkit-scrollbar {
+        display: none !important; /* Chrome, Safari */
+    }
+    .container.twitter-container ul.nav.nav-tabs.scrollable-tabs .nav-item {
+        flex: 0 0 auto !important;
+        min-width: fit-content !important; /* Sekmelerin sıkışmasını önle */
+        margin-right: 4px !important; /* Sekmeler arası boşluk */
+    }
+    .container.twitter-container ul.nav.nav-tabs.scrollable-tabs .nav-link {
+        padding: 8px 12px !important;
+        font-size: 0.9rem !important;
+        white-space: nowrap !important;
+        line-height: 1.5 !important; /* Dikey hizalamayı düzelt */
+    }
+    /* Üst elementlerin etkisini tamamen geçersiz kıl */
+    .container.twitter-container {
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+    .container.twitter-container .tab-content {
+        max-width: 100% !important;
+        padding: 0 !important;
+        margin: 0 !important;
+    }
+}

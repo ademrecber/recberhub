@@ -109,10 +109,10 @@
 {% endblock %}
 
 {% block extra_scripts %}
-    <script type="module" src="{% static 'main/js/load-more-popular.js' %}"></script>
-    <script type="module" src="{% static 'main/js/copy-link.js' %}"></script>
+    <script type="module" src="{% static 'js/load-more-popular.js' %}"></script>
+    <script type="module" src="{% static 'js/copy-link.js' %}"></script>
     <script type="module">
-        import { loadMorePopularPosts } from "{% static 'main/js/load-more-popular.js' %}";
+        import { loadMorePopularPosts } from "{% static 'js/load-more-popular.js' %}";
 
         // Function to process all emoji shortcodes in the current page
         function processPageEmojis() {
