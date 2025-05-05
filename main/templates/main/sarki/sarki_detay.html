@@ -1,0 +1,20 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}Şarkı Sözleri - {{ sarki.ad }}{% endblock %}
+{% block content %}
+<div class="container twitter-container sarki-container">
+    <h3>{{ sarki.ad }}</h3>
+    <div class="card mb-3">
+        <div class="card-body">
+            <h5>Şarkı Sözleri</h5>
+            <p>{{ sarki.sozler|linebreaks }}</p>
+            {% if sarki.link %}
+                <p><a href="{{ sarki.link }}" target="_blank" class="text-primary">Şarkıyı Dinle</a></p>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block extra_css %}
+    <link href="{% static 'main/css/sarki.css' %}" rel="stylesheet">
+{% endblock %}

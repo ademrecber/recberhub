@@ -1,0 +1,21 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}{{ item.kelime }} - Rumep{% endblock %}
+{% block content %}
+<div class="container twitter-container atasozu-deyim-container">
+    <h3>{{ item.kelime }}</h3>
+    <div class="card mb-3">
+        <div class="card-body">
+            <h5>{% if tur == 'atasozu' %}Atasözü{% else %}Deyim{% endif %}</h5>
+            <p><strong>Anlam:</strong> {{ item.anlami|linebreaks }}</p>
+            {% if item.ornek %}
+                <p><strong>Örnek:</strong> {{ item.ornek|linebreaks }}</p>
+            {% endif %}
+            <p class="text-muted small">Ekleyen: {{ item.kullanici.username }} | Tarih: {{ item.eklenme_tarihi|date:"d.m.Y" }}</p>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block extra_css %}
+    <link href="{% static 'main/css/modern.css' %}" rel="stylesheet">
+{% endblock %}

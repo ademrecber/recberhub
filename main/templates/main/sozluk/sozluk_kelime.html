@@ -1,0 +1,18 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}{{ kelime.kelime }} - Kürtçe Sözlük{% endblock %}
+{% block content %}
+    <div class="container twitter-container">
+        <h3>{{ kelime.kelime }}</h3>
+        <div class="card mb-3">
+            <div class="card-body">
+                <p><strong>Detay:</strong> {{ kelime.detay }}</p>
+                <p><strong>Ekleyen:</strong> <a href="{% url 'profile_detail' kelime.kullanici.profile.username %}">{{ kelime.kullanici.profile.nickname }}</a> (@{{ kelime.kullanici.profile.username }})</p>
+                <p><strong>Eklenme Tarihi:</strong> {{ kelime.eklenme_tarihi }}</p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block extra_scripts %}
+    <script type="module" src="{% static 'main/js/modules/sozluk/sozluk_loader.js' %}"></script>
+{% endblock %}
